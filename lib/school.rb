@@ -21,12 +21,20 @@ class School
     roster[num].map {|grade| grade}
   end
   
-  binding.pry
+  
   def sort
-    
-    roster[grade].sort_by {|key, value| key}
+    hash_of_sorts ={}
+    roster.each do |key, value|
+      hash_of_sorts[key]= value.sort
+      
+    end
+    return hash_of_sorts
   end
   
   
   attr_reader :roster, :school_name
 end
+
+
+
+# {9=>["Homer Simpson", "Bart Simpson"], 10=>["Avi Flombaum", "Jeff Baird"], 7=>["Blake Johnson", "Jack Bauer"]}
